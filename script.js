@@ -24,30 +24,34 @@ document.querySelectorAll('#data li').forEach(item => {
     listItems.addEventListener('click', (event) => {
         const selectMonu = listItems.querySelector('.photo-monu'); 
 
-        // Vérifie si l'utilisateur reclique sur l'image active
-        if (monuActif === selectMonu) 
-        {
-            monuActif = null;
+        if (event.target.closest('.nom-monu') || event.target.closest('.photo-monu')) 
+            {
+            // Vérifie si l'utilisateur reclique sur l'image active
+            if (monuActif === selectMonu) 
+            {
+                monuActif = null;
 
-            document.querySelectorAll('.photo-monu').forEach(photoDiv => {
+                document.querySelectorAll('.photo-monu').forEach(photoDiv => {
                 photoDiv.classList.remove('filtre');
-            });
+                });
 
             document.getElementById('explications').innerHTML = "";
-        } 
-        else 
-        {
-            monuActif = selectMonu; 
+            }
 
-            document.querySelectorAll('.photo-monu').forEach(photoDiv => {
-                photoDiv.classList.add('filtre');
-            });
+            else 
+            {
+                monuActif = selectMonu; 
 
-            selectMonu.classList.remove('filtre');
-            document.getElementById('explications').innerHTML = 
-                `<p class="titre-expli">${nom}</p> 
-                <p class="lieu-expli">${ville}, <span>${pays}</span></p>
-                <p class="desc-expli">${desc}</p>`;
+                document.querySelectorAll('.photo-monu').forEach(photoDiv => {
+                    photoDiv.classList.add('filtre');
+                });
+
+                selectMonu.classList.remove('filtre');
+                document.getElementById('explications').innerHTML = 
+                    `<p class="titre-expli">${nom}</p> 
+                    <p class="lieu-expli">${ville}, <span>${pays}</span></p>
+                    <p class="desc-expli">${desc}</p>`;
         }
+    }
     });
 });
