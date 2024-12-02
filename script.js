@@ -12,6 +12,7 @@ document.querySelectorAll('#data li').forEach(item => {
     const nom = item.getAttribute('data-nom');
     const ville = item.getAttribute('data-ville');
     const pays = item.getAttribute('data-pays');
+    const photodesc = item.getAttribute('data-photo-desc');
     const desc = item.getAttribute('data-desc');
   
     // Création de la liste des boutons + photos
@@ -22,35 +23,55 @@ document.querySelectorAll('#data li').forEach(item => {
 
     //Pour changer contenu de la description en cliquant que sur le bouton ou l'image
     listItems.addEventListener('click', (event) => {
-        const selectMonu = listItems.querySelector('.photo-monu'); 
+        const selectMonu = listItems.querySelector('.photo-monu');
+        const nomMonu = listItems.querySelector('.nom-monu');
 
         if (event.target.closest('.nom-monu') || event.target.closest('.photo-monu')) 
             {
-            // Vérifie si l'utilisateur reclique sur l'image active
-            if (monuActif === selectMonu) 
-            {
-                monuActif = null;
+                if (monuActif === selectMonu) 
+                {
+                    monuActif = null;
 
-                document.querySelectorAll('.photo-monu').forEach(photoDiv => {
-                photoDiv.classList.remove('filtre');
-                });
+                    // Reinit css
+                    document.querySelectorAll('.photo-monu').forEach(photoDiv => {
+                        photoDiv.classList.remove('filtre', 'active-monu');
+                    });
+                
+                    document.querySelectorAll('.nom-monu').forEach(nomDiv => {
+                        nomDiv.classList.remove('active-monu');
+                    });
 
-            document.getElementById('explications').innerHTML = "";
-            }
+                    document.getElementById('explications').innerHTML = "";
+                }
 
             else 
             {
                 monuActif = selectMonu; 
 
+                // Ajoute le filtre gris/couleur shadow à toutes les images et les réinitialise
                 document.querySelectorAll('.photo-monu').forEach(photoDiv => {
                     photoDiv.classList.add('filtre');
+                    photoDiv.classList.remove('active-monu');
                 });
+
+                document.querySelectorAll('.nom-monu').forEach(nomDiv => {
+                    nomDiv.classList.remove('active-monu');
+                });
+
+                // Applique les styles actifs
+                selectMonu.classList.remove('filtre');
+                selectMonu.classList.add('active-monu');
+                nomMonu.classList.add('active-monu');
 
                 selectMonu.classList.remove('filtre');
                 document.getElementById('explications').innerHTML = 
-                    `<p class="titre-expli">${nom}</p> 
-                    <p class="lieu-expli">${ville}, <span>${pays}</span></p>
-                    <p class="desc-expli">${desc}</p>`;
+                    `
+                    <div class="photo-desc"> <img src="${photodesc}" alt="${nom}" /> </div>
+                    <div class="text-desc">
+                        <p class="titre-expli">${nom}</p> 
+                        <p class="lieu-expli">${ville}, <span>${pays}</span></p>
+                        <p class="desc-expli">${desc}</p>
+                    </div>`;
         }
     }
     });
