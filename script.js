@@ -1,5 +1,13 @@
+//Fonctionnement de la map
+const map = L.map('map').setView([50.71006735720355, 1.9682706208002292], 10);
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
 //Pour remplir les listes en fonction de la data
 const btnList = document.getElementById('list-btn');
+const mapDesc = document.getElementById('map');
 
 //Pour savoir quel monument est actif 
 let monuActif = null;
@@ -41,6 +49,9 @@ document.querySelectorAll('#data li').forEach(item => {
                         nomDiv.classList.remove('active-monu');
                     });
 
+                    // Cache la div `map`
+                    mapDesc.style.visibility = "hidden";
+
                     document.getElementById('explications').innerHTML = "";
                 }
 
@@ -62,6 +73,9 @@ document.querySelectorAll('#data li').forEach(item => {
                 selectMonu.classList.remove('filtre');
                 selectMonu.classList.add('active-monu');
                 nomMonu.classList.add('active-monu');
+
+                // Affiche la div `info-box`
+                mapDesc.style.visibility = "visible";
 
                 selectMonu.classList.remove('filtre');
                 document.getElementById('explications').innerHTML = 

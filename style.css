@@ -180,6 +180,7 @@ main {
     flex: 1;
     text-align: left;
     padding: 20px 40px 20px 40px;
+    display: flex;
 }
 
 #explications {
@@ -214,6 +215,12 @@ main {
     font-weight: bold;
 }
 
+#map {
+    width: 20%;
+    height: 100%;
+    position: relative;
+    outline-style: none;
+}
 
 
 
@@ -234,6 +241,17 @@ footer {
         align-items: center;
     }
 
+    #container-expli {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #map {
+        width: 80%;
+        height: 300px;
+    }
+
     .photo-desc{
         margin: 20px auto 20px auto;
         width: 100%;
@@ -241,4 +259,17 @@ footer {
         display: flex;
         justify-content: center;
     }
-  }
+}
+
+@media (min-width:720px) and (max-width: 1080px) {
+    #container-expli {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #map {
+        width: 80%;
+        height: 300px;
+    }
+}
