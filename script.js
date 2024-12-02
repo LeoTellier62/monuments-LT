@@ -1,6 +1,9 @@
 //Pour remplir les listes en fonction de la data
 const btnList = document.getElementById('list-btn');
 
+//Pour savoir quel monument est actif 
+let monuActif = null;
+
 // Selectionne la data, lit les données, créer la liste avec boutons sur le côté, et les cercle.
 document.querySelectorAll('#data li').forEach(item => {
     const lat = parseFloat(item.getAttribute('data-lat'));
@@ -19,17 +22,32 @@ document.querySelectorAll('#data li').forEach(item => {
 
     //Pour changer contenu de la description en cliquant que sur le bouton ou l'image
     listItems.addEventListener('click', (event) => {
-        if (event.target.closest('.nom-monu') || event.target.closest('.photo-monu')) 
-        {
-            document.getElementById('explications').innerHTML = ` <h1>${ville}</h1> ${desc}`;
+        const selectMonu = listItems.querySelector('.photo-monu'); 
 
-            // applique filtre gris
+        // Vérifie si l'utilisateur reclique sur l'image active
+        if (monuActif === selectMonu) 
+        {
+            monuActif = null;
+
+            document.querySelectorAll('.photo-monu').forEach(photoDiv => {
+                photoDiv.classList.remove('filtre');
+            });
+
+            document.getElementById('explications').innerHTML = "";
+        } 
+        else 
+        {
+            monuActif = selectMonu; 
+
             document.querySelectorAll('.photo-monu').forEach(photoDiv => {
                 photoDiv.classList.add('filtre');
             });
 
-            // Supprime filtre gris
-            listItems.querySelector('.photo-monu').classList.remove('filtre');
+            selectMonu.classList.remove('filtre');
+            document.getElementById('explications').innerHTML = 
+                `<p class="titre-expli">${nom}</p> 
+                <p class="lieu-expli">${ville}, <span>${pays}</span></p>
+                <p class="desc-expli">${desc}</p>`;
         }
     });
 });

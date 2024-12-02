@@ -76,6 +76,7 @@ body {
     align-items: center;
     text-align: center;
     min-height: 100%;
+    font-family:'Times New Roman', Times, serif;
 }
 
 
@@ -135,7 +136,7 @@ main {
 
 .filtre {
     filter: grayscale(100%);
-    opacity: 0.6;
+    opacity: 0.5;
     transition: filter 0.3s, opacity 0.3s; 
 }
 
@@ -146,8 +147,25 @@ main {
     min-height: 100px;
     margin-top: 20px;
     flex: 1;
+    display: flex;
+    text-align: left;
+    padding: 20px 40px 20px 40px;
 }
 
+.titre-expli
+{
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.lieu-expli
+{
+    font-size: 40px;
+}
+
+.lieu-expli span {
+    font-weight: bold;
+}
 
 
 
