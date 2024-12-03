@@ -79,13 +79,21 @@ document.querySelectorAll('#data li').forEach(item => {
 
                 selectMonu.classList.remove('filtre');
                 document.getElementById('explications').innerHTML = 
-                    `
-                    <div class="photo-desc"> <img src="${photodesc}" alt="${nom}" /> </div>
-                    <div class="text-desc">
+                    `<div class="fade-in photo-desc"> 
+                    <img src="${photodesc}" alt="${nom}" /> 
+                    </div>
+
+                    <div class="fade-in text-desc">
                         <p class="titre-expli">${nom}</p> 
                         <p class="lieu-expli">${ville}, <span>${pays}</span></p>
                         <p class="desc-expli">${desc}</p>
                     </div>`;
+
+                const fadeInElem = document.querySelectorAll('.fade-in');
+                setTimeout(() => {
+                    fadeInElem.forEach((el) => el.classList.add('show'));
+                }, 50);
+                
 
                 map.eachLayer((layer) => {
                     if (layer instanceof L.Marker) {
