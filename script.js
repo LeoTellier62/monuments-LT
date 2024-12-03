@@ -1,5 +1,5 @@
 //Fonctionnement de la map
-const map = L.map('map').setView([50.71006735720355, 1.9682706208002292], 10);
+const map = L.map('map').setView([44.85, 2.6824662359037457], 5);
     const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -86,6 +86,15 @@ document.querySelectorAll('#data li').forEach(item => {
                         <p class="lieu-expli">${ville}, <span>${pays}</span></p>
                         <p class="desc-expli">${desc}</p>
                     </div>`;
+
+                map.eachLayer((layer) => {
+                    if (layer instanceof L.Marker) {
+                        map.removeLayer(layer); // Supprime le marqueur
+                    }
+                });
+
+                var marker = L.marker([lat,lng]).addTo(map);
+                map.setView(marker.getLatLng(), 6);
         }
     }
     });

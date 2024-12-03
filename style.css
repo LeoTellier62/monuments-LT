@@ -186,6 +186,7 @@ main {
 #explications {
     display: flex;
     width: 100%;
+    padding: 10px;
 }
 
 .photo-desc{
@@ -220,6 +221,9 @@ main {
     height: 100%;
     position: relative;
     outline-style: none;
+    box-shadow: 0 0 0 5px 	#372e29, 0 0 0 10px #ecb939;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 
@@ -239,6 +243,7 @@ footer {
         flex-direction: column;
         text-align: center;
         align-items: center;
+        margin-bottom: 20px;
     }
 
     #container-expli {
