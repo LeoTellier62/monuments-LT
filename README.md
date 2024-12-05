@@ -68,7 +68,7 @@ Le client souhaiterait également afficher une carte de France avec un marqueur 
 | ***Fonctionnalités***                  |                               |                           |
 | - Boutons et clic sur images fonctionnels | <ul><li>- [X] &nbsp;</li><ul> |                        |
 | - Description correspondant au monument sélectionné | <ul><li>- [X] &nbsp;</li><ul> |              |
-| - Transitions sur les informations     | <ul><li>- [X ] &nbsp;</li><ul> |                           |
+| - Transitions sur les informations     | <ul><li>- [X] &nbsp;</li><ul> |                           |
 |                                        | <ul><li>- [X] ⭐</li><ul>     |                           |
 | ***Code***                             |                               |                           |
 | - Organisation et lisibilité du code   | <ul><li>- [X] &nbsp;</li><ul> |                           |
