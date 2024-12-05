@@ -58,26 +58,26 @@ Le client souhaiterait également afficher une carte de France avec un marqueur 
 - Pensez à compléter le ***nom de la personne corrigée*** et le ***nom du correcteur*** dans l'entête du tableau.
 - Indiquez le **nombre d'étoiles obtenues** (l'étoile d'une catégorie est obtenue si tous ses critères de performance sont validés).
 
-| *nom de la personne corrigée*          |                               | *nom du correcteur*       |
+| TELLIER Léo          |                                                 | DIOUF PAPA IBRA     |
 | :---- | :----: | :---: |
 | Critères de performance                |                               | Remarques du correcteur   |
 | ***Interface utilisateur***            |                               |                           |
-| - Respect de la maquette               | <ul><li>- [ ] &nbsp;</li><ul> |                           |
-| - Interface interactive                | <ul><li>- [ ] &nbsp;</li><ul> |                           |
-|                                        | <ul><li>- [ ] ⭐</li><ul>     |                           |
+| - Respect de la maquette               | <ul><li>- [X] &nbsp;</li><ul> |                           |
+| - Interface interactive                | <ul><li>- [X] &nbsp;</li><ul> |                           |
+|                                        | <ul><li>- [X] ⭐</li><ul>     |                           |
 | ***Fonctionnalités***                  |                               |                           |
-| - Boutons et clic sur images fonctionnels | <ul><li>- [ ] &nbsp;</li><ul> |                        |
-| - Description correspondant au monument sélectionné | <ul><li>- [ ] &nbsp;</li><ul> |              |
-| - Transitions sur les informations     | <ul><li>- [ ] &nbsp;</li><ul> |                           |
-|                                        | <ul><li>- [ ] ⭐</li><ul>     |                           |
+| - Boutons et clic sur images fonctionnels | <ul><li>- [X] &nbsp;</li><ul> |                        |
+| - Description correspondant au monument sélectionné | <ul><li>- [X] &nbsp;</li><ul> |              |
+| - Transitions sur les informations     | <ul><li>- [X ] &nbsp;</li><ul> |                           |
+|                                        | <ul><li>- [X] ⭐</li><ul>     |                           |
 | ***Code***                             |                               |                           |
-| - Organisation et lisibilité du code   | <ul><li>- [ ] &nbsp;</li><ul> |                           |
-| - Respect des bonnes pratiques HTML/CSS/JS | <ul><li>- [ ] &nbsp;</li><ul> |                       |
-| - Commentaires dans le code            | <ul><li>- [ ] &nbsp;</li><ul> |                           |
-|                                        | <ul><li>- [ ] ⭐</li><ul>     |                           |
+| - Organisation et lisibilité du code   | <ul><li>- [X] &nbsp;</li><ul> |                           |
+| - Respect des bonnes pratiques HTML/CSS/JS | <ul><li>- [X] &nbsp;</li><ul> |                       |
+| - Commentaires dans le code            | <ul><li>- [X] &nbsp;</li><ul> |                           |
+|                                        | <ul><li>- [X] ⭐</li><ul>     |                           |
 | ***Livrables***                        |                               |                           |
-| - Projet livré dans les délais         | <ul><li>- [ ] &nbsp;</li><ul> |                           |
-|                                        | <ul><li>- [ ] ⭐</li><ul>     |                           |
+| - Projet livré dans les délais         | <ul><li>- [X] &nbsp;</li><ul> |                           |
+|                                        | <ul><li>- [X] ⭐</li><ul>     |                           |
 
 **Nombre d'étoiles obtenues** : ⭐⭐⭐⭐⭐
 
